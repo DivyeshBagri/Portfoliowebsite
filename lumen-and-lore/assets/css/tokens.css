@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Lumen & Lore — Design tokens
+   Layout concept: an editorial story told in chapters. Wide gutters,
+   serif display type, lavender dusk paper with deep night bands and one ultramarine
+   "lumen" accent that behaves like a light source.
+   ========================================================================== */
+
+:root {
+  /* Colour — light (default): lavender dusk paper, a sibling of the night theme */
+  --paper: #DCD6E4;        /* dusk paper */
+  --paper-2: #CFC7DB;      /* deeper paper for bands */
+  --card: #E9E4EF;         /* raised surfaces */
+  --ink: #19142A;          /* violet-black ink */
+  --ink-2: #4A4260;        /* secondary text */
+  --ink-3: #978EAA;        /* faint text, unread manifesto words */
+  --line: rgb(25 20 42 / 0.16);
+  --accent: #3A24D6;       /* ultramarine lumen */
+  --accent-2: #A893F7;     /* lilac glow */
+  --on-accent: #F5F3FF;
+  --live: #1A8F5F;         /* availability signal */
+  --shadow: 0 30px 60px -30px rgb(25 20 42 / 0.45);
+
+  /* Night bands — deep sections used for drama in both themes */
+  --night: #17122B;
+  --night-card: #221B3D;
+  --on-night: #EDE9F7;
+  --on-night-2: #A9A1C2;
+  --night-line: rgb(237 233 247 / 0.14);
+  --night-accent: #9C8CFF;
+
+  /* Type */
+  --f-display: "Gloock", "Iowan Old Style", "Times New Roman", serif;
+  --f-body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --t-hero: clamp(2.25rem, 4.6vw, 4.25rem);
+  --t-1: clamp(1.875rem, 3.2vw, 3rem);
+  --t-2: clamp(1.5rem, 2.3vw, 2.125rem);
+  --t-3: clamp(1.2rem, 1.5vw, 1.4rem);
+  --t-lead: clamp(1.0625rem, 1.15vw, 1.1875rem);
+  --t-body: 1rem;
+  --t-small: 0.875rem;
+  --t-label: 0.75rem;
+  --t-display-xl: clamp(2.75rem, 7vw, 6rem);
+
+  /* Space & shape */
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1440px;
+  --section: clamp(72px, 9vw, 128px);
+  --radius: 14px;
+  --header-h: 76px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111018;
+    --paper-2: #181722;
+    --card: #1E1D29;
+    --ink: #ECEAF3;
+    --ink-2: #A9A6B6;
+    --ink-3: #4F4C5C;
+    --line: rgb(236 234 243 / 0.12);
+    --accent: #8B80FF;
+    --accent-2: #3E3577;
+    --on-accent: #0E0C1A;
+    --live: #4FD49B;
+    --shadow: 0 30px 60px -30px rgb(0 0 0 / 0.7);
+    --night: #1B1732;
+    --night-card: #262041;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #111018;
+  --paper-2: #181722;
+  --card: #1E1D29;
+  --ink: #ECEAF3;
+  --ink-2: #A9A6B6;
+  --ink-3: #4F4C5C;
+  --line: rgb(236 234 243 / 0.12);
+  --accent: #8B80FF;
+  --accent-2: #3E3577;
+  --on-accent: #0E0C1A;
+  --live: #4FD49B;
+  --shadow: 0 30px 60px -30px rgb(0 0 0 / 0.7);
+  --night: #1B1732;
+  --night-card: #262041;
+  color-scheme: dark;
+}

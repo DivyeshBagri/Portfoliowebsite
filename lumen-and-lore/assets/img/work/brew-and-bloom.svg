@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#2F4A3A"/>
+  <g fill="none" stroke="#E9DFC9" stroke-opacity=".12"><path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200M0 720H1200"/></g>
+  <circle cx="790" cy="400" r="310" fill="#E9DFC9"/>
+  <circle cx="790" cy="400" r="240" fill="#5B3A29"/>
+  <circle cx="790" cy="400" r="240" fill="none" stroke="#E9DFC9" stroke-width="2" stroke-dasharray="3 12" opacity=".5"/>
+  <g transform="translate(790 400)" fill="#F2C7B5">
+    <ellipse rx="40" ry="100" transform="translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(45) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(90) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(135) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(180) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(225) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(270) translate(0 -110)"/>
+    <ellipse rx="40" ry="100" transform="rotate(315) translate(0 -110)"/>
+  </g>
+  <circle cx="790" cy="400" r="46" fill="#E9A23B"/>
+  <text x="80" y="790" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#E9DFC9">Brew &amp; Bloom</text>
+  <text x="84" y="842" font-family="'Courier New', monospace" font-size="22" letter-spacing="6" fill="#F2C7B5">COFFEE · FLOWERS · BENGALURU</text>
+</svg>

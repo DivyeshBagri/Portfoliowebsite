@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#F2E7D3"/>
+  <circle cx="760" cy="470" r="190" fill="#E07A3F"/>
+  <rect y="480" width="1200" height="420" fill="#1F4E5F"/>
+  <g fill="none" stroke="#F2E7D3" stroke-opacity=".35" stroke-width="3" stroke-linecap="round">
+    <path d="M620 530h280M660 570h200M700 610h120"/>
+    <path d="M80 660c40-16 80-16 120 0s80 16 120 0M900 720c40-16 80-16 120 0s80 16 120 0M300 800c40-16 80-16 120 0s80 16 120 0"/>
+  </g>
+  <g fill="#6B4A2E">
+    <rect x="120" y="380" width="26" height="520"/><rect x="210" y="410" width="26" height="490"/><rect x="300" y="440" width="26" height="460"/><rect x="390" y="465" width="22" height="435"/>
+    <rect x="100" y="380" width="330" height="22" transform="rotate(8 100 380)"/>
+  </g>
+  <text x="80" y="140" font-family="Georgia, 'Times New Roman', serif" font-size="88" fill="#1F4E5F">Tide &amp; Timber</text>
+  <text x="84" y="192" font-family="'Courier New', monospace" font-size="22" letter-spacing="6" fill="#6B4A2E">12 ROOMS · MORJIM, GOA</text>
+</svg>

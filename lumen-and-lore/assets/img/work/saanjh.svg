@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <pattern id="weave" width="48" height="48" patternUnits="userSpaceOnUse">
+      <rect width="48" height="48" fill="#8C2F39"/>
+      <rect width="24" height="48" fill="#7B2832"/>
+      <rect y="0" width="48" height="6" fill="#E0A458" opacity=".5"/>
+      <rect y="24" width="48" height="2" fill="#F3EBDD" opacity=".25"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#weave)"/>
+  <path d="M360 900V420A240 240 0 0 1 840 420V900Z" fill="#F3EBDD"/>
+  <path d="M430 900V440A170 170 0 0 1 770 440V900Z" fill="#2B2D42"/>
+  <circle cx="600" cy="380" r="70" fill="#E0A458"/>
+  <g fill="#E0A458">
+    <path d="M600 560l18 18-18 18-18-18z"/><path d="M540 620l12 12-12 12-12-12z"/><path d="M660 620l12 12-12 12-12-12z"/>
+  </g>
+  <text x="600" y="740" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="96" fill="#F3EBDD">saanjh</text>
+  <text x="600" y="800" text-anchor="middle" font-family="'Courier New', monospace" font-size="20" letter-spacing="8" fill="#E0A458">WOVEN AT DUSK</text>
+</svg>

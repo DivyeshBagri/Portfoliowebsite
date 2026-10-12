@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Layout: TIDE — Tide & Timber
+   A wide panorama, then one pinned scene where the sky moves from sunrise
+   to night. Without motion, each moment shows as its own sky card.
+   ========================================================================== */
+
+.tide-panorama {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--p1);
+  margin-top: clamp(32px, 4vw, 56px);
+}
+.tide-panorama img { position: absolute; inset: -8% 0; width: 100%; height: 116%; object-fit: cover; }
+@media (max-width: 700px) { .tide-panorama { aspect-ratio: 4 / 3; } }
+
+.tide-day { position: relative; }
+.tide-panel {
+  --sky-ink: #1F3440;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+  color: var(--sky-ink);
+}
+.tide-panel.is-night { --sky-ink: #F2E7D3; }
+.tide-arc, .tide-sea { display: none; }
+
+/* Static (no-motion) presentation: one sky card per moment */
+.tide-copy { display: grid; gap: 16px; padding-block: var(--section); }
+.tide-clock { display: none; }
+.tide-moment {
+  display: grid;
+  gap: 12px;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: var(--radius);
+  background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+  color: #1F3440;
+}
+.tide-moment:last-child { color: #F2E7D3; }
+.tide-time { font-family: var(--f-mono); font-size: clamp(1.4rem, 3vw, 2.2rem); display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.tide-time .label { color: inherit; opacity: 0.75; }
+.tide-moment h3 { font-size: var(--t-1); max-width: 18ch; }
+.tide-moment p:last-child { font-size: var(--t-lead); max-width: 46ch; opacity: 0.85; }
+
+/* Pinned scene */
+.tide-day.is-pinned .tide-panel { height: 100vh; min-height: 560px; }
+.tide-day.is-pinned .tide-arc { display: block; position: absolute; left: 50%; bottom: 18%; width: min(1100px, 130vw); transform: translateX(-50%); height: auto; overflow: visible; }
+.tide-arc-path { fill: none; stroke: currentColor; stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 3 9; }
+.tide-sun { fill: #F7D46B; filter: drop-shadow(0 0 24px rgb(247 212 107 / 0.8)); transition: fill 0.6s; }
+.tide-panel.is-night .tide-sun { fill: #F2E7D3; filter: drop-shadow(0 0 18px rgb(242 231 211 / 0.6)); }
+.tide-day.is-pinned .tide-sea { display: block; position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 20%; }
+.tide-sea path:first-child { fill: var(--p1); }
+.tide-sea-line { fill: none; stroke: #F2E7D3; stroke-opacity: 0.35; stroke-width: 2; }
+
+.tide-day.is-pinned .tide-copy {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding-top: calc(var(--header-h) + 32px);
+  padding-bottom: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-content: start;
+}
+.tide-day.is-pinned .tide-clock { display: flex; gap: clamp(12px, 3vw, 32px); flex-wrap: wrap; font-family: var(--f-mono); font-size: 0.8rem; letter-spacing: 0.08em; }
+.tide-clock li { opacity: 0.45; padding-bottom: 6px; border-bottom: 2px solid transparent; transition: opacity 0.4s, border-color 0.4s; }
+.tide-clock li.is-active { opacity: 1; border-color: currentColor; }
+.tide-day.is-pinned .tide-moment {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: start;
+  margin-top: clamp(24px, 6vh, 64px);
+  padding: 0;
+  background: none;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out), transform 0.8s var(--ease-out);
+  pointer-events: none;
+}
+.tide-day.is-pinned .tide-moment.is-active { opacity: 1; transform: none; pointer-events: auto; }
+@media (max-width: 700px) {
+  .tide-day.is-pinned .tide-arc { bottom: 16%; }
+  .tide-day.is-pinned .tide-moment h3 { font-size: var(--t-2); }
+}

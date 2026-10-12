@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lumen &amp; Lore</title>
+<meta name="description" content="Lumen &amp; Lore is a branding and marketing studio that turns businesses into stories people remember.">
+<meta property="og:title" content="Lumen &amp; Lore">
+<meta property="og:description" content="Lumen &amp; Lore is a branding and marketing studio that turns businesses into stories people remember.">
+<meta name="theme-color" content="#3528E8">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<script>
+  /* Apply saved theme, and decide whether to play the brand intro, before first paint */
+  (function () {
+    var html = document.documentElement;
+    try {
+      var t = localStorage.getItem("ll-theme");
+      if (t === "dark" || t === "light") html.setAttribute("data-theme", t);
+    } catch (e) {}
+    try {
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce && !sessionStorage.getItem("ll-intro")) html.classList.add("is-loading");
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro-cover"></div>
+  <div class="intro-brand" data-intro-brand>
+    <svg class="brand-mark intro-mark" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 23V9M9 23h7M17 23V9M17 23h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle class="glow" cx="23" cy="10" r="3.2"/>
+    </svg>
+    <span class="intro-word"><span data-chars>Lumen</span> <i>&amp;</i> <span data-chars>Lore</span></span>
+  </div>
+</div>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Lumen and Lore, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 23V9M9 23h7M17 23V9M17 23h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle class="glow" cx="23" cy="10" r="3.2"/>
+      </svg>
+      <span class="brand-word">Lumen <i>&amp;</i> Lore</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="work.html" data-nav="work">Work</a>
+      <a href="about.html" data-nav="about">Studio</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme"><span class="theme-toggle-dot"></span></button>
+      <a class="btn btn-accent btn-sm" href="contact.html" data-magnetic><span>Start a project</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" data-menu hidden>
+  <nav aria-label="Mobile">
+    <a href="index.html" data-nav="home"><span>Home</span></a>
+    <a href="work.html" data-nav="work"><span>Work</span></a>
+    <a href="about.html" data-nav="about"><span>Studio</span></a>
+    <a href="contact.html" data-nav="contact"><span>Contact</span></a>
+  </nav>
+  <div class="menu-foot">
+    <p class="label">New projects</p>
+    <p>hello@lumenandlore.studio</p>
+  </div>
+</div>
+
+<main id="main" data-page="home">
+
+<aside class="chapter-rail" data-rail aria-hidden="true">
+  <span class="rail-num" data-rail-num>I</span>
+  <span class="rail-line"><i data-rail-fill></i></span>
+  <span class="rail-title" data-rail-title>Why we exist</span>
+</aside>
+
+<!-- Opening line -->
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero-canvas" data-lumen aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-eyebrow" data-hero-fade>
+      <span class="label">Brand &amp; story studio</span>
+      <span class="label">Pune · Working worldwide</span>
+      <span class="label">Since 2014</span>
+    </div>
+    <h1 class="hero-title" id="hero-title" data-hero-title>We turn businesses into <em>stories<svg class="hero-underline" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 60 4, 120 4, 170 10 S 260 16, 296 6"/></svg></em> people remember.</h1>
+
+    <div class="hero-grid">
+      <div>
+        <p class="lead" data-hero-fade>Lumen &amp; Lore is a branding and marketing studio. We find the true story inside a company, then give it a name, a look, a voice and a launch.</p>
+        <div class="hero-ctas" data-hero-fade>
+          <a class="btn" href="#work" data-magnetic><span>See the work <span class="arrow" aria-hidden="true">→</span></span></a>
+          <a class="btn btn-ghost" href="contact.html" data-magnetic><span>Start a project</span></a>
+        </div>
+      </div>
+      <a class="now-card" href="project.html#brew-and-bloom" data-now-link data-hero-fade>
+        <div class="now-media" data-now-media></div>
+        <div class="now-info">
+          <span class="now-title" data-now-title>Brew &amp; Bloom</span>
+          <span class="label" data-now-meta>Identity</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="hero-foot" data-hero-fade>
+      <span class="hero-status"><span class="pulse" aria-hidden="true"></span><span class="label">Booking projects from January 2027</span></span>
+      <a class="scroll-cue label" href="#manifesto"><i aria-hidden="true"></i>Scroll to begin the story</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span class="marquee-item">Strategy</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Naming</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Identity</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Packaging</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Campaigns</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Motion</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Websites</span><span class="marquee-sep">✦</span>
+    </div>
+    <div class="marquee-group">
+      <span class="marquee-item">Strategy</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Naming</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Identity</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Packaging</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Campaigns</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Motion</span><span class="marquee-sep">✦</span>
+      <span class="marquee-item">Websites</span><span class="marquee-sep">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- Chapter I -->
+<section class="section" id="manifesto" data-chapter="I" data-chapter-title="Why we exist" aria-labelledby="manifesto-label">
+  <div class="container manifesto-grid">
+    <div class="manifesto-aside">
+      <div class="chapter"><span class="chapter-num">I</span><span class="label" id="manifesto-label">Why we exist</span></div>
+    </div>
+    <div>
+      <p class="manifesto-text" data-scrub-words>Most brands don't have a design problem. They have a story problem. They know what they sell, but not why anyone should care. We start by listening, dig until we find the one true thing, and build everything around it: the name, the colours, the words and the launch. When the story is clear, the design almost writes itself.</p>
+      <div class="manifesto-sign" data-reveal>
+        <span class="avatar shape-0" aria-hidden="true"><span>MK</span></span>
+        <span><span class="sig">Meera Kulkarni</span><br><span class="label">Founder &amp; Creative Director</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter II -->
+<section class="section band" id="services" data-chapter="II" data-chapter-title="What we do" aria-labelledby="services-title">
+  <div class="container">
+    <div class="chapter"><span class="chapter-num">II</span><span class="label">What we do</span></div>
+    <div class="services-head">
+      <h2 class="section-title" id="services-title" data-split>Six ways we tell a brand's story</h2>
+      <p class="lead" data-reveal>Hire us for one piece or the whole journey. Most clients start with strategy and stay for the launch.</p>
+    </div>
+
+    <ul class="svc-list">
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-1">
+          <span class="svc-name">Brand strategy</span>
+          <span class="svc-side"><span class="label">Weeks 1–4</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-1"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">We interview your customers, your team and your competitors' customers, then write down the one story your brand should own. Everything else is built on this.</p>
+          <ul class="tags"><li class="tag">Research</li><li class="tag">Positioning</li><li class="tag">Brand platform</li><li class="tag">Naming</li><li class="tag">Tone of voice</li></ul>
+        </div></div></div>
+      </li>
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-2">
+          <span class="svc-name">Visual identity</span>
+          <span class="svc-side"><span class="label">Weeks 4–10</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-2"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">Logo systems, typography, colour, illustration and photography direction, delivered with clear guidelines your team can actually use.</p>
+          <ul class="tags"><li class="tag">Logo system</li><li class="tag">Typography</li><li class="tag">Colour</li><li class="tag">Guidelines</li></ul>
+        </div></div></div>
+      </li>
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-3">
+          <span class="svc-name">Packaging</span>
+          <span class="svc-side"><span class="label">Weeks 6–14</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-3"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">From structure to print, we design packs that win on the shelf and on the unboxing video. We manage print runs with our trusted vendors.</p>
+          <ul class="tags"><li class="tag">Structure</li><li class="tag">Labels</li><li class="tag">Unboxing</li><li class="tag">Print production</li></ul>
+        </div></div></div>
+      </li>
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-4">
+          <span class="svc-name">Campaigns</span>
+          <span class="svc-side"><span class="label">4–12 weeks</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-4"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">Launch ideas that travel from a billboard to a 15-second reel without losing the plot. We write, design, produce and plan the media.</p>
+          <ul class="tags"><li class="tag">Campaign idea</li><li class="tag">Film &amp; motion</li><li class="tag">Out-of-home</li><li class="tag">Media planning</li></ul>
+        </div></div></div>
+      </li>
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-5">
+          <span class="svc-name">Social &amp; content</span>
+          <span class="svc-side"><span class="label">Monthly</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-5"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">Content pillars, art direction and a steady rhythm of posts, reels and stories that sound like you every single time.</p>
+          <ul class="tags"><li class="tag">Content strategy</li><li class="tag">Art direction</li><li class="tag">Reels</li><li class="tag">Creators</li></ul>
+        </div></div></div>
+      </li>
+      <li class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-6">
+          <span class="svc-name">Web &amp; digital</span>
+          <span class="svc-side"><span class="label">6–12 weeks</span><span class="svc-icon" aria-hidden="true"></span></span>
+        </button>
+        <div class="svc-body" id="svc-6"><div class="svc-body-inner"><div class="svc-content">
+          <p class="prose">Websites, product interfaces and e-commerce built to feel like the brand, load fast and convert.</p>
+          <ul class="tags"><li class="tag">Websites</li><li class="tag">Product UI</li><li class="tag">E-commerce</li><li class="tag">Motion design</li></ul>
+        </div></div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Chapter III -->
+<section class="hs" id="work" data-hs data-chapter="III" data-chapter-title="Stories we've told" aria-labelledby="work-title">
+  <div class="hs-track">
+    <div class="hs-intro">
+      <div>
+        <div class="chapter"><span class="chapter-num">III</span><span class="label">Stories we've told</span></div>
+        <h2 class="section-title" id="work-title" data-split>Selected work</h2>
+      </div>
+      <p class="lead">Four recent stories, from a café that sells flowers to a scooter that made silence its headline.</p>
+    </div>
+    <a class="hs-end" href="work.html" data-reel>
+      <span class="label">Six projects and counting</span>
+      <strong>See all work →</strong>
+    </a>
+  </div>
+  <div class="hs-progress" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- Chapter IV -->
+<section class="section band--night" id="process" data-chapter="IV" data-chapter-title="How we work" aria-labelledby="process-title">
+  <div class="container">
+    <div class="chapter"><span class="chapter-num">IV</span><span class="label">How we work</span></div>
+    <div class="process-head">
+      <h2 class="section-title" id="process-title" data-split>Four steps from first call to launch day</h2>
+      <p class="lead" data-reveal>A typical identity project takes 10 to 14 weeks. You will always know which step we are on and what comes next.</p>
+    </div>
+
+    <ol class="process-list">
+      <li class="process-line" aria-hidden="true"><span></span></li>
+      <li class="step">
+        <div class="step-head"><span class="step-num">01 · Weeks 1–2</span><h3 class="step-title">Listen</h3></div>
+        <div class="step-body">
+          <p>We start with workshops and customer interviews. No sketches, no moodboards, just questions until we understand what makes you different.</p>
+          <ul class="tags"><li class="tag">Founder workshop</li><li class="tag">Customer interviews</li><li class="tag">Audit</li></ul>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-head"><span class="step-num">02 · Weeks 3–4</span><h3 class="step-title">Discover</h3></div>
+        <div class="step-body">
+          <p>We turn what we heard into a brand story: one page that says who you are for, what you believe and why it matters. You sign this off before any design starts.</p>
+          <ul class="tags"><li class="tag">Brand story</li><li class="tag">Positioning</li><li class="tag">Naming</li></ul>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-head"><span class="step-num">03 · Weeks 5–10</span><h3 class="step-title">Create</h3></div>
+        <div class="step-body">
+          <p>Design and words develop together. We show two or three strong directions, refine one with you, then build it into a full system.</p>
+          <ul class="tags"><li class="tag">Identity</li><li class="tag">Copy</li><li class="tag">Packaging</li><li class="tag">Web</li></ul>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-head"><span class="step-num">04 · Weeks 11–14</span><h3 class="step-title">Launch</h3></div>
+        <div class="step-body">
+          <p>We produce the launch assets, train your team on the guidelines and stay on for the first campaign so the story arrives in the world exactly as planned.</p>
+          <ul class="tags"><li class="tag">Guidelines</li><li class="tag">Launch campaign</li><li class="tag">Team training</li></ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Proof -->
+<section class="section" aria-labelledby="proof-title">
+  <div class="container">
+    <h2 class="sr-only" id="proof-title">The studio in numbers</h2>
+    <div class="stats">
+      <div class="stat"><p class="stat-value"><span data-count="120">120</span><sup>+</sup></p><p>brands named, built or rebuilt since 2014</p></div>
+      <div class="stat"><p class="stat-value"><span data-count="12">12</span></p><p>years telling stories for founders and teams</p></div>
+      <div class="stat"><p class="stat-value"><span data-count="18">18</span></p><p>design and advertising awards</p></div>
+      <div class="stat"><p class="stat-value"><span data-count="40">40</span><sup>M+</sup></p><p>people reached by our launch campaigns</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Clients -->
+<section class="section--tight" aria-labelledby="clients-title">
+  <p class="label clients-label" id="clients-title">Trusted by founders, families and fast-growing teams</p>
+  <div class="marquee marquee--reverse marquee--slow">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="client-name cn-1">Brew &amp; Bloom</span><span class="client-name cn-2">volt</span><span class="client-name cn-3">Saanjh</span><span class="client-name cn-4">Nomad</span><span class="client-name cn-5">Tide &amp; Timber</span><span class="client-name cn-1">kora</span><span class="client-name cn-2">Fieldnotes</span><span class="client-name cn-3">Orbit Labs</span><span class="client-name cn-4">Monsoon Tea</span><span class="client-name cn-5">Halcyon</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="client-name cn-1">Brew &amp; Bloom</span><span class="client-name cn-2">volt</span><span class="client-name cn-3">Saanjh</span><span class="client-name cn-4">Nomad</span><span class="client-name cn-5">Tide &amp; Timber</span><span class="client-name cn-1">kora</span><span class="client-name cn-2">Fieldnotes</span><span class="client-name cn-3">Orbit Labs</span><span class="client-name cn-4">Monsoon Tea</span><span class="client-name cn-5">Halcyon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" aria-labelledby="quotes-title">
+  <div class="container quotes">
+    <div class="quotes-aside">
+      <div>
+        <p class="label" id="quotes-title">In their words</p>
+      </div>
+      <div class="quote-nav">
+        <button class="round-btn" type="button" data-quote-prev aria-label="Previous testimonial">←</button>
+        <span class="quote-count" data-quote-count aria-live="polite">01 / 03</span>
+        <button class="round-btn" type="button" data-quote-next aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+    <div class="quote-stage" data-quotes></div>
+  </div>
+</section>
+
+<!-- Team teaser -->
+<section class="section band" aria-labelledby="team-title">
+  <div class="container team-teaser">
+    <div>
+      <p class="label">The storytellers</p>
+      <h2 class="section-title" id="team-title" data-split>Twenty-two people, one obsession</h2>
+    </div>
+    <div class="team-teaser-body">
+      <div class="team-faces" data-faces data-reveal></div>
+      <p class="lead" data-reveal>Strategists, designers, writers, animators and producers who sit at the same table and argue about the same story.</p>
+      <a class="link-arrow" href="about.html" data-reveal>Meet the studio <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter V -->
+<section class="section cta" id="contact" data-chapter="V" data-chapter-title="Your story" aria-labelledby="cta-title">
+  <div class="container cta-inner">
+    <div class="chapter"><span class="chapter-num">V</span><span class="label">Your story starts here</span></div>
+    <h2 id="cta-title"><a class="cta-big" href="contact.html" data-cta-letters>Let's talk</a></h2>
+    <div class="cta-row">
+      <p class="lead">Tell us about your business and where you want it to go. We reply to every message within two working days.</p>
+      <div class="copy-row">
+        <span class="cta-mail" data-copy-text>hello@lumenandlore.studio</span>
+        <button class="copy-btn" type="button" data-copy="hello@lumenandlore.studio">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer band--night">
+  <div class="container footer-top">
+    <div class="footer-cta">
+      <p class="label">Have a story worth telling?</p>
+      <a class="footer-mail" href="contact.html">hello@lumenandlore.studio</a>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <p class="label">Studio</p>
+        <p>4th floor, Kalyani Print House<br>Koregaon Park, Pune 411001</p>
+      </div>
+      <div>
+        <p class="label">Explore</p>
+        <a href="work.html">Work</a>
+        <a href="about.html">Studio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <p class="label">Follow</p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+      </div>
+      <div>
+        <p class="label">Local time</p>
+        <p class="tabular" data-clock>Pune, IST</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">Lumen&amp;Lore</div>
+  <div class="container footer-bottom">
+    <p>© 2026 Lumen &amp; Lore Studio. A fictional agency built as a portfolio demo.</p>
+    <button type="button" data-to-top>Back to top ↑</button>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/data/projects.js"></script>
+<script src="assets/js/core/utils.js"></script>
+<script src="assets/js/core/theme.js"></script>
+<script src="assets/js/core/scroll.js"></script>
+<script src="assets/js/core/nav.js"></script>
+<script src="assets/js/core/magnetic.js"></script>
+<script src="assets/js/core/intro.js"></script>
+<script src="assets/js/core/reveal.js"></script>
+<script src="assets/js/pages/home.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

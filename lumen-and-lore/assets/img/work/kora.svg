@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#EFD9CF"/>
+  <circle cx="900" cy="220" r="140" fill="#C76B5A" opacity=".25"/>
+  <g>
+    <rect x="610" y="300" width="170" height="460" rx="40" fill="#FBF6F2"/>
+    <rect x="650" y="230" width="90" height="80" rx="12" fill="#2E2A27"/>
+    <rect x="820" y="420" width="200" height="340" rx="30" fill="#C76B5A"/>
+    <rect x="860" y="370" width="120" height="60" rx="10" fill="#2E2A27"/>
+    <rect x="460" y="520" width="130" height="240" rx="24" fill="#FBF6F2"/>
+    <rect x="490" y="480" width="70" height="50" rx="8" fill="#2E2A27"/>
+    <text x="695" y="520" text-anchor="middle" font-family="Didot, 'Bodoni MT', Georgia, serif" font-size="48" fill="#2E2A27">kora</text>
+    <text x="695" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" letter-spacing="3" fill="#2E2A27">5 INGREDIENTS</text>
+  </g>
+  <rect x="0" y="760" width="1200" height="140" fill="#2E2A27"/>
+  <path d="M220 180c40 70 60 110 60 140a60 60 0 0 1-120 0c0-30 20-70 60-140z" fill="#C76B5A"/>
+  <text x="80" y="850" font-family="Didot, 'Bodoni MT', Georgia, serif" font-size="56" fill="#EFD9CF">skin, as it is.</text>
+</svg>

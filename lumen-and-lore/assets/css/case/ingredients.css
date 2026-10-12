@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Layout: INGREDIENTS — Kora
+   Clinical and calm: lowercase display type, a pharmacy label, a formula
+   sheet with hairline rules, and a before/after packaging slider.
+   ========================================================================== */
+
+.ing-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
+@media (max-width: 820px) { .ing-hero-grid { grid-template-columns: 1fr; } }
+.ing-title {
+  font-family: Didot, "Bodoni MT", var(--f-display);
+  font-size: clamp(4rem, 13vw, 11rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--p1);
+}
+.ing-headline { margin-top: 20px; font-size: var(--t-lead); max-width: 36ch; color: var(--ink-2); }
+
+.ing-label {
+  position: relative;
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  background: var(--card);
+}
+.ing-label-border { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.ing-label-border rect { fill: none; stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ing-label-head, .ing-label-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; letter-spacing: 0.1em; }
+.ing-label-head { padding-bottom: 10px; border-bottom: 3px solid var(--ink); font-weight: 500; }
+.ing-label-foot { padding-top: 10px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.7rem; }
+.ing-label ul { display: grid; gap: 10px; }
+.ing-label li { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 32px; gap: 12px; align-items: center; }
+.ing-label li > span:last-child { text-align: right; }
+.ing-bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.ing-bar i { display: block; height: 100%; width: var(--w); background: var(--p1); transform-origin: left; }
+
+/* Formula sheet */
+.ing-rows { display: grid; }
+.ing-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: 20px;
+  padding-block: clamp(22px, 3vw, 36px);
+  align-items: baseline;
+}
+.ing-rule { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--ink); transform-origin: left; }
+.ing-n { font-family: var(--f-mono); color: var(--p1); }
+.ing-row h3 { font-size: var(--t-3); }
+.ing-amount { font-family: var(--f-mono); font-size: 0.85rem; color: var(--ink-2); }
+.ing-text { color: var(--ink-2); }
+@media (max-width: 820px) {
+  .ing-row { grid-template-columns: 44px minmax(0, 1fr); }
+  .ing-amount, .ing-text { grid-column: 2; }
+}
+
+/* Before / after */
+.ing-compare {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  user-select: none;
+}
+@media (max-width: 700px) { .ing-compare { aspect-ratio: 4 / 5; } }
+.ing-side { position: absolute; inset: 0; display: grid; place-items: center; }
+.ing-before { background: radial-gradient(circle at 30% 30%, #ffe6f2, #f3b5d3 50%, #c98bd9); }
+.ing-after { background: var(--p2); clip-path: inset(0 0 0 var(--split)); }
+.ing-side-label { position: absolute; bottom: 16px; padding: 6px 10px; border-radius: 999px; background: rgb(255 255 255 / 0.75); color: #2E2A27; }
+.ing-before .ing-side-label { left: 16px; }
+.ing-after .ing-side-label { right: 16px; }
+
+.ing-bottle {
+  position: relative;
+  width: clamp(120px, 16vw, 200px);
+  aspect-ratio: 1 / 2.1;
+  border-radius: 30px 30px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 26px 14px;
+  text-align: center;
+  box-shadow: 0 30px 40px -24px rgb(0 0 0 / 0.45);
+}
+.ing-cap { position: absolute; top: -16%; left: 30%; right: 30%; height: 18%; border-radius: 10px 10px 4px 4px; background: #2E2A27; }
+.ing-bottle.is-glossy { background: linear-gradient(120deg, #fff 0%, #f9d4ea 35%, #e2a9f0 70%, #fff 100%); color: #8b2f80; }
+.ing-b-title { font-family: "Arial Black", Impact, sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.8rem); letter-spacing: -0.02em; }
+.ing-b-line { font-family: Georgia, serif; font-style: italic; font-size: 0.85rem; }
+.ing-b-small { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+.ing-bottle.is-honest { background: var(--p3); color: var(--p4); justify-content: space-between; }
+.ing-b-list { display: grid; gap: 4px; font-family: "Helvetica Neue", Arial, sans-serif; font-size: clamp(0.7rem, 1vw, 0.9rem); font-weight: 600; text-align: left; width: 100%; }
+.ing-b-list li { padding-bottom: 4px; border-bottom: 1px solid rgb(46 42 39 / 0.2); }
+.ing-b-brand { font-family: Didot, "Bodoni MT", Georgia, serif; font-size: 1.1rem; }
+
+.ing-handle { position: absolute; top: 0; bottom: 0; left: var(--split); width: 2px; margin-left: -1px; background: #fff; pointer-events: none; }
+.ing-handle i { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: #fff; box-shadow: 0 6px 20px rgb(0 0 0 / 0.25); }
+.ing-handle i::before { content: "‹ ›"; position: absolute; inset: 0; display: grid; place-items: center; color: #2E2A27; font-weight: 600; letter-spacing: 2px; }
+.ing-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.ing-range:focus-visible + * , .ing-compare:focus-within .ing-handle i { outline: 2px solid var(--accent); outline-offset: 3px; }

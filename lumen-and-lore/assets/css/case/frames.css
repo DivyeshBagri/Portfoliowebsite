@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Layout: FRAMES — Volt
+   A deliberately dark, single-world page in Volt's own colours (it stays
+   dark in both site themes): asphalt ground, chalk text, current yellow.
+   ========================================================================== */
+
+.case--frames {
+  --paper: var(--p3);
+  --paper-2: #17171C;
+  --card: #1D1D23;
+  --ink: var(--p4);
+  --ink-2: rgb(244 242 236 / 0.66);
+  --ink-3: rgb(244 242 236 / 0.22);
+  --line: rgb(244 242 236 / 0.14);
+  --accent: var(--p2);
+  --on-accent: var(--p3);
+  background: var(--paper);
+  color: var(--ink);
+  color-scheme: dark;
+}
+
+.frames-hero { padding-bottom: 0; }
+.frames-title {
+  font-family: "Arial Black", Impact, var(--f-body);
+  font-weight: 900;
+  font-size: clamp(4rem, 14vw, 12rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--p2);
+}
+.frames-hero .case-headline { max-width: 26ch; }
+
+.frames-wave { position: relative; margin-top: clamp(32px, 5vw, 64px); }
+.frames-wave svg { display: block; width: 100%; height: clamp(120px, 18vw, 240px); }
+.frames-wave path { fill: none; stroke: var(--p2); stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.frames-meter { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+.frames-db { font-family: var(--f-mono); font-size: clamp(1.5rem, 3vw, 2.5rem); font-variant-numeric: tabular-nums; color: var(--p2); }
+.case-facts--light { margin-top: clamp(40px, 5vw, 64px); }
+
+.frames-statements .container { display: grid; gap: clamp(56px, 8vw, 120px); }
+.frames-statement { display: grid; grid-template-columns: minmax(120px, 0.3fr) minmax(0, 1fr); gap: 24px; align-items: baseline; }
+.frames-statement-text {
+  font-family: var(--f-display);
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 28ch;
+}
+@media (max-width: 700px) { .frames-statement { grid-template-columns: 1fr; gap: 12px; } }
+
+/* Campaign reel */
+.frames-reel { position: relative; overflow: hidden; padding-block: var(--section); border-block: 1px solid var(--line); }
+.frames-track { display: flex; gap: clamp(20px, 3vw, 40px); padding-inline: var(--gutter); }
+.frames-intro { flex: 0 0 min(380px, 32vw); display: grid; gap: 16px; align-content: center; }
+.frame { flex: 0 0 clamp(320px, 48vw, 720px); display: grid; gap: 14px; }
+.frame-board {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--p4);
+  color: var(--p3);
+  box-shadow: 0 0 0 10px #26262c, 0 40px 60px -30px rgb(0 0 0 / 0.8);
+}
+.frame-line {
+  position: absolute;
+  left: 6%;
+  top: 9%;
+  font-family: "Arial Black", Impact, var(--f-body);
+  font-weight: 900;
+  font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.01em;
+}
+.frame-logo { position: absolute; right: 6%; top: 9%; font-family: "Arial Black", Impact, var(--f-body); font-size: 0.8rem; color: var(--p1); letter-spacing: 0.08em; }
+.frame-scooter { position: absolute; right: 8%; bottom: 10%; width: 14%; color: var(--p1); }
+.frame figcaption { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (min-width: 900px) {
+  .frames-reel.is-pinned { min-height: 100vh; display: flex; align-items: center; padding-block: calc(var(--header-h) + 24px) 48px; }
+}
+@media (max-width: 899px) {
+  .frames-track { flex-direction: column; }
+  .frames-intro, .frame { flex: none; width: 100%; }
+}
+
+.frames-outcome-text { font-family: var(--f-display); font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.25; max-width: 30ch; margin-top: 16px; }
+.case--frames .case-identity { background: var(--paper-2); }
+
+/* Keep the site header readable on this dark page in either theme */
+body:has(.case--frames) .site-header {
+  --paper: var(--case-dark, #0E0E10);
+  --ink: #F4F2EC;
+  --line: rgb(244 242 236 / 0.16);
+  color: var(--ink);
+}
