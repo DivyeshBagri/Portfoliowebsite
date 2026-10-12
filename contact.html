@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Lumen &amp; Lore</title>
+<meta name="description" content="Start a project with Lumen &amp; Lore.">
+<meta property="og:title" content="Contact · Lumen &amp; Lore">
+<meta property="og:description" content="Start a project with Lumen &amp; Lore.">
+<meta name="theme-color" content="#3528E8">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script>
+  /* Apply saved theme, and decide whether to play the brand intro, before first paint */
+  (function () {
+    var html = document.documentElement;
+    try {
+      var t = localStorage.getItem("ll-theme");
+      if (t === "dark" || t === "light") html.setAttribute("data-theme", t);
+    } catch (e) {}
+    try {
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce && !sessionStorage.getItem("ll-intro")) html.classList.add("is-loading");
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro-cover"></div>
+  <div class="intro-brand" data-intro-brand>
+    <svg class="brand-mark intro-mark" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 23V9M9 23h7M17 23V9M17 23h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle class="glow" cx="23" cy="10" r="3.2"/>
+    </svg>
+    <span class="intro-word"><span data-chars>Lumen</span> <i>&amp;</i> <span data-chars>Lore</span></span>
+  </div>
+</div>
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Lumen and Lore, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 23V9M9 23h7M17 23V9M17 23h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle class="glow" cx="23" cy="10" r="3.2"/>
+      </svg>
+      <span class="brand-word">Lumen <i>&amp;</i> Lore</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="work.html" data-nav="work">Work</a>
+      <a href="about.html" data-nav="about">Studio</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme"><span class="theme-toggle-dot"></span></button>
+      <a class="btn btn-accent btn-sm" href="contact.html" data-magnetic><span>Start a project</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr-only">Menu</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" data-menu hidden>
+  <nav aria-label="Mobile">
+    <a href="index.html" data-nav="home"><span>Home</span></a>
+    <a href="work.html" data-nav="work"><span>Work</span></a>
+    <a href="about.html" data-nav="about"><span>Studio</span></a>
+    <a href="contact.html" data-nav="contact"><span>Contact</span></a>
+  </nav>
+  <div class="menu-foot">
+    <p class="label">New projects</p>
+    <p>hello@lumenandlore.studio</p>
+  </div>
+</div>
+
+<main id="main" data-page="contact">
+
+<section class="page-hero">
+  <div class="container">
+    <span class="label">Chapter V · Contact</span>
+    <h1 class="page-title" data-split>Your story starts <em>here</em></h1>
+    <p class="lead lead-gap" data-reveal>Tell us a little about your business and what you need. A director reads every message and replies within two working days.</p>
+  </div>
+</section>
+
+<section class="section section--flush-top" aria-label="Enquiry">
+  <div class="container contact-grid">
+    <div>
+      <form class="contact-form" data-contact-form novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input class="input" id="name" name="name" type="text" autocomplete="name" placeholder="Aisha Khan">
+            <p class="field-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="aisha@company.com">
+            <p class="field-error" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="company">Company</label>
+            <input class="input" id="company" name="company" type="text" autocomplete="organization" placeholder="Company or project name">
+            <p class="field-error"></p>
+          </div>
+          <div class="field">
+            <label for="timeline">When do you want to launch?</label>
+            <select class="input" id="timeline" name="timeline">
+              <option>In the next 3 months</option>
+              <option selected>In 3 to 6 months</option>
+              <option>In 6 to 12 months</option>
+              <option>Not sure yet</option>
+            </select>
+            <p class="field-error"></p>
+          </div>
+        </div>
+
+        <fieldset class="field">
+          <legend>What can we help with?</legend>
+          <div class="chips" data-chip-group="multi" id="services-group">
+            <button class="chip" type="button" aria-pressed="false">Brand strategy</button>
+            <button class="chip" type="button" aria-pressed="false">Naming</button>
+            <button class="chip" type="button" aria-pressed="false">Visual identity</button>
+            <button class="chip" type="button" aria-pressed="false">Packaging</button>
+            <button class="chip" type="button" aria-pressed="false">Campaign</button>
+            <button class="chip" type="button" aria-pressed="false">Social &amp; content</button>
+            <button class="chip" type="button" aria-pressed="false">Website</button>
+          </div>
+          <p class="field-error" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Budget</legend>
+          <div class="chips" data-chip-group="single" id="budget-group">
+            <button class="chip" type="button" aria-pressed="false">Under ₹5 lakh</button>
+            <button class="chip" type="button" aria-pressed="false">₹5–15 lakh</button>
+            <button class="chip" type="button" aria-pressed="false">₹15–40 lakh</button>
+            <button class="chip" type="button" aria-pressed="false">₹40 lakh+</button>
+          </div>
+          <p class="field-error" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Tell us the story so far</label>
+          <textarea class="input" id="message" name="message" maxlength="800" placeholder="What does your business do, and what's not working yet?"></textarea>
+          <span class="char-count" data-char-count>0 / 800</span>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-foot">
+          <p class="form-note">This is a demo site, so your message won't actually be sent anywhere.</p>
+          <button class="btn btn-accent btn-lg" type="submit" data-magnetic><span>Send enquiry <span class="arrow" aria-hidden="true">→</span></span></button>
+        </div>
+      </form>
+
+      <div class="form-success" data-form-success tabindex="-1" hidden>
+        <p class="label">Message received</p>
+        <h2>Thank you, <span data-success-name>friend</span>.</h2>
+        <p>On a real site, a director would now read your note and reply within two working days. Since this is a demo, nothing was sent.</p>
+        <button class="btn" type="button" data-form-reset><span>Write another message</span></button>
+      </div>
+    </div>
+
+    <aside class="contact-side">
+      <div class="contact-block">
+        <p class="label">New business</p>
+        <div class="copy-row">
+          <span class="big" data-copy-text>hello@lumenandlore.studio</span>
+          <button class="copy-btn" type="button" data-copy="hello@lumenandlore.studio">Copy</button>
+        </div>
+      </div>
+      <div class="contact-block">
+        <p class="label">Visit the studio</p>
+        <p class="big">Kalyani Print House, Koregaon Park, Pune</p>
+        <p>Mon–Fri, 10:00 to 19:00 · <span data-clock>Pune, IST</span></p>
+      </div>
+      <div>
+        <p class="label faq-title">Common questions</p>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">How long does a branding project take? <i aria-hidden="true">+</i></button>
+          <div class="faq-a"><div><p>A full identity takes 10 to 14 weeks. Strategy-only projects take about four weeks, and campaigns depend on the media plan.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Do you work with early-stage startups? <i aria-hidden="true">+</i></button>
+          <div class="faq-a"><div><p>Yes. We run a compact four-week brand sprint for pre-launch companies, with a fixed scope and fixed fee.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">Do you work outside India? <i aria-hidden="true">+</i></button>
+          <div class="faq-a"><div><p>About a third of our clients are in the Middle East, Europe and Singapore. We work across time zones with weekly video calls.</p></div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer band--night">
+  <div class="container footer-top">
+    <div class="footer-cta">
+      <p class="label">Have a story worth telling?</p>
+      <a class="footer-mail" href="contact.html">hello@lumenandlore.studio</a>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <p class="label">Studio</p>
+        <p>4th floor, Kalyani Print House<br>Koregaon Park, Pune 411001</p>
+      </div>
+      <div>
+        <p class="label">Explore</p>
+        <a href="work.html">Work</a>
+        <a href="about.html">Studio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <p class="label">Follow</p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+      </div>
+      <div>
+        <p class="label">Local time</p>
+        <p class="tabular" data-clock>Pune, IST</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-word" aria-hidden="true">Lumen&amp;Lore</div>
+  <div class="container footer-bottom">
+    <p>© 2026 Lumen &amp; Lore Studio. A fictional agency built as a portfolio demo.</p>
+    <button type="button" data-to-top>Back to top ↑</button>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/data/projects.js"></script>
+<script src="assets/js/core/utils.js"></script>
+<script src="assets/js/core/theme.js"></script>
+<script src="assets/js/core/scroll.js"></script>
+<script src="assets/js/core/nav.js"></script>
+<script src="assets/js/core/magnetic.js"></script>
+<script src="assets/js/core/intro.js"></script>
+<script src="assets/js/core/reveal.js"></script>
+<script src="assets/js/pages/contact.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
